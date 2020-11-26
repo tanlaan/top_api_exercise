@@ -1,0 +1,25 @@
+{
+  "name": "top_api_exercise",
+  "version": "1.0.0",
+  "description": "The Odin Project's API exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanlaan/top_api_exercise.git"
+  },
+  "author": "Chris Bolas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanlaan/top_api_exercise/issues"
+  },
+  "homepage": "https://github.com/tanlaan/top_api_exercise#readme",
+  "dependencies": {
+    "webpack": "^5.6.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.2.0"
+  }
+}
