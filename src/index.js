@@ -26,19 +26,23 @@ function newImageHandler(event) {
     changeImage(newRequest, img)
 }
 
-function changeImage(request, image) {
-    fetch(request, { mode: 'cors' })
-        .then((response) => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error('No image found.')
-            }
-        })
-        .then(query => image.src = query.data.images.original.url)
-        .catch(err => console.log(err))
+async function changeImage(request, image) {
+    try {
+        let response = await fetch(request, { mode: 'cors' })
+        let query
+        if (response.ok) {
+            query = await response.json()
+            console.log(query)
+        } else {
+            throw new Error('No image found.')
+        }
+        image.src = query.data.images.original.url
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
 
-function makeRequest(search = 'cat', endpoint = 'random') {
+function makeRequest(search = 'cat', endpoint = 'translate') {
     return `https://api.giphy.com/v1/gifs/${endpoint}?api_key=${apiKey}&s=${search}`
 }
